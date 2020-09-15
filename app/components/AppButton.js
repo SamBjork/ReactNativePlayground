@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, StatusBar, Text, TouchableOpacity } from "react-native";
 
-import AppText from './AppText';
+import AppText from "./AppText";
 import colors from "../config/colors";
 
 function AppButton({ title, onPress, color = "primary" }) {
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
+    marginVertical: 10,
   },
   logotextview: {
     alignItems: "center",

@@ -11,10 +11,9 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label("Password"),
 });
 
-export default function LoginScreen() {
+export default function ListingsEditScreen() {
   return (
     <Screen style={styles.container}>
-      <Image source={require("../assets/logo-red.png")} style={styles.logo} />
       <AppForm
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => console.log(values)}
@@ -23,23 +22,23 @@ export default function LoginScreen() {
         <AppTextInput
           autoCapitalize="none"
           autoCorrect={false}
-          icon="email"
-          keyboardType="email-address"
-          name="email"
-          placeholder="Email"
-          textContentType="emailAddress"
+          name="title"
+          placeholder="Title"
         />
         <AppTextInput
           autoCapitalize="none"
           autoCorrect={false}
-          icon="lock"
-          keyboardType="default"
-          name="password"
-          placeholder="Password"
-          secureTextEntry={true}
-          textContentType="password"
+          name="price"
+          placeholder="Price"
         />
-        <SubmitButton title="Login" />
+        <AppFormPicker />
+        <AppTextInput
+          autoCapitalize="none"
+          autoCorrect={false}
+          name="description"
+          placeholder="Description"
+        />
+        <SubmitButton title="Post" />
       </AppForm>
     </Screen>
   );
